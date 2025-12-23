@@ -67,10 +67,12 @@ function getDayName(date) {
  */
 function getNextFriday(date) {
   const result = new Date(date);
+
   let dayIncrement = (5 + 7 - date.getDay()) % 7;
   if (dayIncrement === 0) {
     dayIncrement = 7;
   }
+
   result.setDate(date.getDate() + dayIncrement);
   return result;
 }
@@ -86,8 +88,8 @@ function getNextFriday(date) {
  * 1, 2024 => 31
  * 2, 2024 => 29
  */
-function getCountDaysInMonth(/* month, year */) {
-  throw new Error('Not implemented');
+function getCountDaysInMonth(month, year) {
+  return new Date(year, month, 0).getDate();
 }
 
 /**
